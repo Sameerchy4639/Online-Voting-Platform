@@ -7,17 +7,47 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <title><%= title %></title>
 </head>
+<style>
+    #f{
+        color: blue;
+    }
+    #L{
+        color: brown;
+    }
+    #E{
+        color: darkgreen;
+    }
+    #c{
+        background-color: aqua;
+    }
+    #a{
+        background-color: indianred;
+    }
+    #r{
+        margin-left: 600px;
+        font-style: oblique;
+        font-size: xx-large;
+    }
+    #k{
+        background-color: gray;
+    }
+</style>
 <body class="bg-gray-50">
     <nav>
+        <div class="b">
         <div class="container flex flex-wrap items-center justify-between mx-auto">
           <a href="/" class="py-2 px-4 flex items-center">
-            <span class="self-center text-xl font-semibold whitespace-nowrap text-blue-800">E-Vote</span>
+            <div id="r">
+            <span class="self-center text-xl font-semibold whitespace-nowrap text-blue-800">Online voting</span>
+          </div>
           </a>
         </div>
     </nav>
     <div class=" flex  text-gray-800 antialiased flex-col overflow-hidden bg-gray-50 ">
         <div class=" sm:w-96 mx-auto text-center">
+            <div id="c">
             <span class="text-2xl font-light ">Create a new admin account</span>
+            </div>
             <div>
                 <% if (messages && messages.error && messages.error.length > 0) { %>
                     <% for(var i=0; i<messages.error.length; i++) { %>
@@ -27,24 +57,35 @@
             </div>
             <div class="mt-4 bg-white shadow-md rounded-lg text-left">
                 <div class="h-2 bg-blue-400 rounded-t-md"></div>
+                <div id="k">
                 <form action="/admin" method="post" class="px-8 py-6">
                     <input type="hidden" name="_csrf" value="<%= csrfToken %>" />
+                    <div id="f">
                     <label for="firstName" class="block mt-3 font-semibold">First name</label>
+                    </div>
                     <input id="firstName" name="firstName" type="text" placeholder="First name" class="border w-full h-5 px-3 py-5 mt-2 hover:outline-none focus:outline-none focus:ring-indigo-500 focus:ring-1 rounded-md" required>
+                    <div id="L">
                     <label for="lastName" class="block mt-3 font-semibold">Last name</label>
+                    </div>
                     <input id="lastName" name="lastName" type="text" placeholder="Last name" class="border w-full h-5 px-3 py-5 mt-2 hover:outline-none focus:outline-none focus:ring-indigo-500 focus:ring-1 rounded-md">
+                    <div id="E">
                     <label for="email" class="block mt-3 font-semibold">Email</label>
+                    </div>
                     <input id="email" name="email" type="email" placeholder="Email" class="border w-full h-5 px-3 py-5 mt-2 hover:outline-none focus:outline-none focus:ring-indigo-500 focus:ring-1 rounded-md" required>
                     <label for="password" class="block mt-3 font-semibold">Password</label>
                     <input id="password" name="password" type="password" placeholder="Password" class="border w-full h-5 px-3 py-5 mt-2 hover:outline-none focus:outline-none focus:ring-indigo-500 focus:ring-1 rounded-md" required>
                     <button type="submit" class="mt-6 bg-blue-500 w-full text-white py-2 px-6 rounded-md hover:bg-blue-600 ">Create account</button>
                 </form>
+                </div>
             </div>
             <div class="mt-4">
+                <div id="a"
                 <a href="/login" class="text-sm hover:text-blue-400">Already have an account? Sign in</a>
+                </div>
             </div>
         </div>
     </div>
+</div>
 </body>
 </html>
 Footer

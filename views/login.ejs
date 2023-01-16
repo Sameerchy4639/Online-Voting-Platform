@@ -7,17 +7,48 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <title><%= title %></title>
 </head>
+<style>
+    
+    
+    #E{
+        color: brown;
+    }
+    #p{
+        color: chartreuse;
+    }
+    #t{
+        background-color: gray;
+    
+    }
+    #c{
+        color: dark black:
+        
+    }
+    #o{
+        margin-left: 500px;
+         background-color: white;
+         color: black;
+         font-size: xx-large;
+        
+    }
+</style>
+<div id="b">
 <body class="bg-gray-50">
     <nav>
         <div class="container flex flex-wrap items-center justify-between mx-auto">
           <a href="/" class="py-2 px-4 flex items-center">
-            <span class="self-center text-xl font-semibold whitespace-nowrap text-blue-800">E-Vote</span>
+            <div id="o">
+            <span class="self-center text-xl font-semibold whitespace-nowrap text-blue-800">Online Voting</span>
+            </div>
+            
           </a>
         </div>
     </nav>
     <div class=" flex  text-gray-800 antialiased flex-col  overflow-hidden bg-gray-50 py-6 sm:py-12">
         <div class=" py-3 sm:w-96 mx-auto text-center">
+            <div id="c">
             <span class="text-2xl font-light ">Login to your account</span>
+            </div>
             <div>
                 <% if (messages && messages.error && messages.error.length > 0) { %>
                     <% for(var i=0; i<messages.error.length; i++) { %>
@@ -27,14 +58,20 @@
             </div>
             <div class="mt-4 bg-white shadow-md rounded-lg text-left">
                 <div class="h-2 bg-blue-400 rounded-t-md"></div>
+                <div id="t">
                 <form action="/session" method="post" class="px-8 py-6">
                     <input type="hidden" name="_csrf" value="<%= csrfToken %>" />
-                    <label for="email" class="block mt-3 font-semibold">Email</label>
+                    <div id="E">
+                    <label for="email"class="block mt-3 font-semibold">Email</label>
+                    </div>
                     <input id="email" name="email" type="email" placeholder="Email" class="border w-full h-5 px-3 py-5 mt-2 hover:outline-none focus:outline-none focus:ring-indigo-500 focus:ring-1 rounded-md" required>
+                    <div id="p">
                     <label for="password" class="block mt-3 font-semibold">Password</label>
+                    </div>
                     <input id="password" name="password" type="password" placeholder="Password" class="border w-full h-5 px-3 py-5 mt-2 hover:outline-none focus:outline-none focus:ring-indigo-500 focus:ring-1 rounded-md" required>
                     <button type="submit" class="mt-6 w-full bg-blue-500 text-white py-2 px-6 rounded-md hover:bg-blue-600 ">Login</button>
                 </form>
+                </div>
             </div>
             <div class="mt-4">
                 <a href="/signup" class="text-sm hover:text-blue-400">Don't have an account? Sign up</a>

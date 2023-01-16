@@ -7,10 +7,27 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <title><%= title %></title>
 </head>
-<body class="bg-gray-50">
+<style>
+    #h{
+        background-color: aqua;
+        margin-right: 950px;
+        margin-left: 100px;
+    }
+    #a{
+        color: brown;
+    }
+</style>
+<center>
+<body class="bg-gray-50>
+    <center>
     <%- include('header.ejs') %>
     <div class="my-6 mx-10">
+    
+        <div id="h">
         <h3 class="text-4xl my-4 font-medium">Hello, <%= userName %></h3>
+
+        </div>
+        
         <div>
             <% if (messages.success) { %>
                 <p class="bg-blue-100 m-3 list-none rounded-md px-4 py-2"><%= messages.success %></p>
@@ -24,7 +41,9 @@
             <% } %>
         </div>
         <div class="flex gap-2 py-4 justify-between">
+            <div id="a">
             <h5 class="text-2xl">Your Elections</h5>
+            </div>
             <div class="bg-blue-800 rounded w-fit px-2 py-1 hover:bg-blue-600">
                 <a href="/elections/create" class="text-white">+ Create a new election</a>
             </div>
@@ -45,4 +64,5 @@
         </div>
     </div>
 </body>
+</center>
 </html>
